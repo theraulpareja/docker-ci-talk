@@ -12,7 +12,7 @@ Embrace the best practices
     Isolate netwroks
     COPY vs ADD
     ENTRYPOINT vs CMD
-Docker host maintenance
+Docker host maintenance needed
 Kubernetes for infra maintenance abstraction
 
 ### Benefits of docker for CI
@@ -24,10 +24,11 @@ Continuous Integration (CI) is a development practice that requires developers t
 Advantages .... is cheap ... reduce times for troubleshooting
 Best practices ... run on every commit, be fast, unit tests + integration tests
 
-Common issues... diferences between a developer environment vs CI environment setups, dependencies on infra teams to update tools ...
+Common issues... diferences between a developer workstation environment vs CI environment setups, dependencies on infra teams to update tools ...
 
 Whould be very nice to share among the team meambers and the CI system a common portable environmet that ensures that all the needed versions, dependencies and tools are exactly the seam for each member, and that environment is also used for the CI integration tests.
 
+### Docker for portable apps
 Docker can help us with that, it encapsualtes your applications with all the needed dependencies into containers.
 
 EXPLAIN CONTAINERS HERE:
@@ -54,3 +55,9 @@ Server: Docker Engine - Community
 
 A client that runs the commands and is needed to build images from Dockerfiles 
 A Linux server which runs the docker daemon or a cluster (Swarm and Kubernetes)
+
+#### Persistent data
+Use Volumes for:
+
+* Data persistence
+* Optimize writing files 
