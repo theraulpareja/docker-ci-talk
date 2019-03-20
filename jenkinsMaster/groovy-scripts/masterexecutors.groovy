@@ -1,5 +1,5 @@
-//Want to reduce the amount of executors on master to only 1
-//because it may be needed to run sed jobs with DSL
+//Want to reduce the amount of executors on master to only 4
+//That will be for housekeeping jobs executed on master 
 
 import jenkins.model.*
-Jenkins.instance.setNumExecutors(1)
+Jenkins.instance.setNumExecutors(4)
