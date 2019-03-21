@@ -83,6 +83,11 @@ export_vars() {
 
 # Main --------------------------
 
+#Start the sshd service and leave it in the background
+/usr/sbin/sshd  &
+#Wait for the master to fully up and running
+sleep 60 
+
 #Check Usage and value of the arg
 check_usage $1
 

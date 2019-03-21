@@ -38,5 +38,6 @@ COPY ./shell-scripts/connect_slave.sh /home/jenkins/connect_slave.sh
 # Standard SSH port
 EXPOSE 22
 
-# Default command
-CMD ["/usr/sbin/sshd", "-D"]
+# Default commands to be executed
+#CMD ["/usr/sbin/sshd", "-D"]
+CMD bash /home/jenkins/connect_slave.sh create
