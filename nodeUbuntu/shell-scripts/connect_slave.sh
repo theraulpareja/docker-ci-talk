@@ -27,7 +27,7 @@ get_jenkins_cli() {
     which curl > /dev/null 2>&1
     if [ $? -eq 0 ]; then
         echo "Gettting jenkins-cli.jar via curl from "$JENKINS_SERVER""
-        curl -sLkO $JENKINS_SERVER/jnlpJars/jenkins-cli.jar
+        curl -sLkO $JENKINS_SERVER:$JENKINS_PORT/jnlpJars/jenkins-cli.jar
         if [ $? -ne 0 ]; then
             echo "ERROR: curl could not download jenkins-cli.jar successfully"
             exit 2
