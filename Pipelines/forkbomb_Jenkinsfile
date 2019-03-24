@@ -1,0 +1,22 @@
+pipeline {
+    agent { any }
+    stages{
+        stage('Show docker info'){
+            steps {
+                echo "Display Docker info of the docker host"
+                sh 'docker info'
+            }
+        }
+        stage('Warning'){
+            steps {
+                echo 'This job will kill the docker host'
+            }
+        }
+        stage('Run the cleanup'){
+            steps {
+                echo 'Running a clean up'
+                sh 'docker system prune -f'
+            }
+        }
+    }
+}

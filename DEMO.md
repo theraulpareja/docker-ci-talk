@@ -20,6 +20,9 @@ cd ~/VagrantBoxes/Debian9
 vagrant up
 vagrant ssh 
 
+#### Run the fork bomb inside the docker host to see the consecuences
+https://askubuntu.com/questions/159491/why-did-the-command-make-my-system-lag-so-badly-i-had-to-reboot
+
 #### To access the GIT repo
 Inside the vagrant box Debian9
 cd GIT
@@ -73,3 +76,26 @@ Sources for Android 28
   
 40.6 MB
 
+### Build app command line 
+https://developer.android.com/studio/build/building-cmdline (run andorid build command line)
+https://developer.android.com/studio/command-line (available command line tools)
+https://developer.android.com/studio/#downloads (sources to download andorid studio, sdk, etc)
+
+#### Requirements
+install jdk 8 u202 to run the gradle wrapper
+
+How to install andorid sdk https://linoxide.com/linux-how-to/install-android-sdk-manager-ubuntu/
+
+Go to your project root for andorid studio and check available gradle tasks:
+./gradlew tasks (to see all available task)
+
+2 types of build for Andorid
+* DEBUG (automatically signed with a debug key provided by the SDK tools)
+Usually an APK artifact
+
+* RELEASE(needs to be signed with your own private key to be uploaded to Google Play)
+Usually an Android App Bundle which  include all your app’s compiled code and resourcess, but defer APK generation and signing to Google Play. Unlike an APK, you can't deploy an app bundle directly to a device. So, if you want to quickly test or share an APK with someone else, you should instead build an APK.
+
+
+### CI With docker pipelines
+https://rancher.com/docker-based-build-pipelines-part-1-continuous-integration-and-testing/

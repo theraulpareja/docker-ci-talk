@@ -1,0 +1,23 @@
+pipeline {
+    agent {
+        label 'docker-host'
+    }
+    stages{
+        stage('Show docker objects'){
+            steps {
+                echo 'Show images'
+                sh 'docker image ls'
+                echo 'Show docker volumes'
+                sh 'docker volume ls'
+                echo 'Show docker networks'
+                sh 'docker network ls'
+            }
+        }
+        stage('Run the cleanup'){
+            steps {
+                echo 'Running a clean up'
+                sh 'docker system prune -f'
+            }
+        }
+    }
+}

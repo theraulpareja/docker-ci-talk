@@ -10,7 +10,7 @@ import org.jenkinsci.plugins.plaincredentials.impl.*
 def createSSHCredential(id, username, sshkeyName, description) {
   return new BasicSSHUserPrivateKey(CredentialsScope.GLOBAL,
           id, username,
-          new BasicSSHUserPrivateKey.FileOnMasterPrivateKeySource('/var/lib/jenkins_home/.ssh/'+sshkeyName),
+          new BasicSSHUserPrivateKey.FileOnMasterPrivateKeySource('/var/jenkins_home/.ssh/'+sshkeyName),
           '', description)
 }
 
